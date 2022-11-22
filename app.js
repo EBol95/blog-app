@@ -26,6 +26,10 @@ app.get("/",function (req, res){
 
 });
 
+app.get('/post/:writingSomething',function (req, res)  {
+  console.log(req.params.writingSomething);
+});
+
 app.get("/about", function (req, res){
   res.render("about", {aboutContent: aboutContent});
 });
