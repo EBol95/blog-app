@@ -38,10 +38,12 @@ app.get("/posts/:writingSomething",function (req, res)  {
     const storedTitle = _.lowerCase( post.title);
 
     if (storedTitle === requestedTitle){
-      console.log("Match found!")
-    } else {
-      console.log("Not a Match");
+      res.render("post", {
+        header : post.title,
+        comment : post.content
+      });
     }
+
   });
 });
 
